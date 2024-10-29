@@ -16,7 +16,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Third parties apps
+    "rest_framework",
+    # Business apps
     "store",
+    # Swagger
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -73,6 +78,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Store API",
+    "DESCRIPTION": "API documentation for the Store application",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+}
 
 LANGUAGE_CODE = "en-us"
 
